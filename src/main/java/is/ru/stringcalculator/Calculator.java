@@ -7,8 +7,7 @@ public class Calculator {
 			return 0;
 		else{
 			if(text.contains(",")){
-				String numbers[] = text.split(",");
-				return sum(numbers);
+				return sum(getArray(text));
 			}
 		}
 		return 1;
@@ -25,5 +24,12 @@ public class Calculator {
 				}
 				return total;
 		
+	}
+	
+	private static String [] getArray(String text){
+		String temp = text.replace('\n', ',');
+		String numbers[] = temp.split(",");
+		
+		return numbers;		
 	}
 }
