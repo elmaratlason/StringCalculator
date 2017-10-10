@@ -25,5 +25,9 @@ public class CalculatorTest {
 	public void testMultipleSplitwithNewline(){
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
+	@Test
+	public void testMultipleSplitwithOnlyNewline(){
+		assertEquals(6, Calculator.add("1\n2\n3"));
+	}
 	
 }

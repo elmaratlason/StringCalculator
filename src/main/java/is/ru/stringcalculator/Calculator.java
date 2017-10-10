@@ -8,6 +8,8 @@ public class Calculator {
 		else{
 			if(text.contains(",")){
 				return sum(getArray(text));
+			}else if(text.contains("\n")){
+				return sum(getArray(text));
 			}
 		}
 		return 1;
@@ -27,7 +29,8 @@ public class Calculator {
 	}
 	
 	private static String [] getArray(String text){
-		String temp = text.replace('\n', ',');
+		
+		String temp = text.replaceAll("\n", ",");
 		String numbers[] = temp.split(",");
 		
 		return numbers;		
