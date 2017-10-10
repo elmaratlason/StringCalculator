@@ -29,5 +29,9 @@ public class CalculatorTest {
 	public void testMultipleSplitwithOnlyNewline(){
 		assertEquals(6, Calculator.add("1\n2\n3"));
 	}
+	@Test
+	public void testMultipleSplitwithNewlineComma(){
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
 	
 }
