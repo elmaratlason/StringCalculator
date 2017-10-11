@@ -1,6 +1,8 @@
 package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import org.junit.Test;
 
 public class CalculatorTest {
@@ -40,6 +42,10 @@ public class CalculatorTest {
 	@Test
 	public void testSplitwithNewline(){
 		assertEquals(3, Calculator.add("1\n2"));
+	}
+	@Test(expected= IllegalArgumentException.class) 
+	public void testNegatives(){
+		Calculator.add("1,-2");
 	}
 	
 }
