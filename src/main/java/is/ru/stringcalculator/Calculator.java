@@ -3,13 +3,14 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 private static int maxNum = 1000;
-
+private static boolean debug = true;
 	
 	public static int add(String text){
 		validate(text);
 		if(text.equals(""))
 			return 0;
 		else{
+			System.out.println("at sum " + text);
 			return sum(getArray(text));
 		}
 	}
@@ -32,25 +33,31 @@ private static int maxNum = 1000;
 	}
 	
 	private static String [] getArray(String text){
-		
+		System.out.println("getArray: " + text);
 		String delim = ",";
-		String temp;
+		String mynumbers[];
 		if(text.contains("//")){
+			doOutput("contains //");
+			doOutput(text);
 			String newText = text.substring(2);
+			doOutput(newText);
 			String line1[] = newText.split("\n", 2);
 			delim = line1[0];
-			System.out.println("DELIM: " + delim);
-			temp = line1[1];
-			String numbers[] = temp.split(delim);
-			return numbers;
+			doOutput("DELIM: " + delim);
+			doOutput("LINE1: " + line1[1]);
+			String numbers[] = line1[1].split(delim);
+			return numbers;		
 		}else{
-			temp = text.replaceAll("\n", ",");
+			String temp = text.replaceAll("\n", ",");
+			doOutput("TEMP2: " + temp);
 			String numbers[] = temp.split(delim);
-		
 			return numbers;		
 		}
+			//return mynumbers;		
+			
 	}
 	
+		
 	private static String validate(String text){
 		String [] numbers = getArray(text);
 		StringBuilder negatives = new StringBuilder();
@@ -59,7 +66,6 @@ private static int maxNum = 1000;
 			if(number.contains("-")){
 				negatives.append(number);
 				negatives.append(",");
-				
 				neg = true;
 			}
 		}
@@ -70,4 +76,11 @@ private static int maxNum = 1000;
 		}
 		
 	}
+	
+	private static void doOutput(String output){
+		if(debug){
+			System.out.println(output);
+		}
+	}
+	
 }
