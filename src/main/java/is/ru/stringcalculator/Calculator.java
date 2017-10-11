@@ -20,7 +20,7 @@ private static int maxNum = 1000;
 	
 	private static int toint(String number){
 		int temp = Integer.parseInt(number);
-		if(temp <= maxNum){
+		if(temp < maxNum){
 			return temp;
 		}else{
 			return 0;
