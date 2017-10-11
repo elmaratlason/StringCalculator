@@ -1,6 +1,8 @@
 package is.ru.stringcalculator;
 
 public class Calculator {
+private static int maxNum = 1000;
+
 	
 	public static int add(String text){
 		validate(text);
@@ -18,7 +20,7 @@ public class Calculator {
 	
 	private static int toint(String number){
 		int temp = Integer.parseInt(number);
-		if(temp <= 1000){
+		if(temp <= maxNum){
 			return temp;
 		}else{
 			return 0;
@@ -58,7 +60,6 @@ public class Calculator {
 		}else{
 			return text;
 		}
-		
 		
 	}
 }
