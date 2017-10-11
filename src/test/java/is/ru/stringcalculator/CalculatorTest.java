@@ -48,4 +48,10 @@ public class CalculatorTest {
 		Calculator.add("1,-2");
 	}
 	
+	@Test
+	public void testLargeNumber1(){
+		assertEquals(2, Calculator.add("1001,2"));
+	}
+	
 }
+	

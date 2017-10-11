@@ -1,6 +1,7 @@
 package is.ru.stringcalculator;
 
 public class Calculator {
+public int maxNum = 1000;
 	
 	public static int add(String text){
 		validate(text);
@@ -17,16 +18,20 @@ public class Calculator {
 	}
 	
 	private static int toint(String number){
-		return Integer.parseInt(number);
+		int temp = Integer.parseInt(number);
+		if(temp < 1000){
+			return temp;
+		}else{
+			return 0;
+		}
 	}
 	
 	private static int sum(String [] numbers){
-				int total = 0 ;
-				for(String number : numbers){
-					total += toint(number);
-				}
-				return total;
-		
+		int total = 0 ;
+		for(String number : numbers){
+			total += toint(number);
+		}
+		return total;
 	}
 	
 	private static String [] getArray(String text){
