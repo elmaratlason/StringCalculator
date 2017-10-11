@@ -115,6 +115,13 @@ private static int testCounter = 0;
 			System.out.println(seperator + testCounter);
 		testCounter++;
 	}
+	@Test(expected= IllegalArgumentException.class) 
+	public void testVariantDelimiterNeg(){
+		assertEquals(10, Calculator.add("//:\n1:7:-2"));
+		if(printseperator)
+			System.out.println(seperator + testCounter);
+		testCounter++;
+	}
 	
 }
 	
