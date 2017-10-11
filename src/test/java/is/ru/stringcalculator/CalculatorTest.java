@@ -6,7 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 public class CalculatorTest {
-private static boolean printseperator = true;
+private static boolean printseperator = false;
 private static String seperator = "#### ";
 private static int testCounter = 0;
 	@Test
@@ -105,6 +105,12 @@ private static int testCounter = 0;
 	@Test
 	public void testVariantDelimiter1(){
 		assertEquals(8, Calculator.add("//x\n1x7"));
+		if(printseperator)
+			System.out.println(seperator + testCounter);
+		testCounter++;
+	}
+	public void testVariantDelimiter3(){
+		assertEquals(10, Calculator.add("//:\n1:7:2"));
 		if(printseperator)
 			System.out.println(seperator + testCounter);
 		testCounter++;

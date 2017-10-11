@@ -3,14 +3,14 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 private static int maxNum = 1000;
-private static boolean debug = true;
+private static boolean outputInfo = false;
 	
 	public static int add(String text){
 		validate(text);
 		if(text.equals(""))
 			return 0;
 		else{
-			System.out.println("at sum " + text);
+			doOutput("at sum " + text);
 			return sum(getArray(text));
 		}
 	}
@@ -33,7 +33,7 @@ private static boolean debug = true;
 	}
 	
 	private static String [] getArray(String text){
-		System.out.println("getArray: " + text);
+		doOutput("getArray: " + text);
 		String delim = ",";
 		String mynumbers[];
 		if(text.contains("//")){
@@ -78,7 +78,7 @@ private static boolean debug = true;
 	}
 	
 	private static void doOutput(String output){
-		if(debug){
+		if(outputInfo){
 			System.out.println(output);
 		}
 	}
