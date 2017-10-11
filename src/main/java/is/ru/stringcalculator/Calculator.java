@@ -1,5 +1,6 @@
 package is.ru.stringcalculator;
 
+
 public class Calculator {
 private static int maxNum = 1000;
 
@@ -11,7 +12,6 @@ private static int maxNum = 1000;
 		else{
 			return sum(getArray(text));
 		}
-//		return 1;
 	}
 	
 	private static int toint(String number){
@@ -33,10 +33,22 @@ private static int maxNum = 1000;
 	
 	private static String [] getArray(String text){
 		
-		String temp = text.replaceAll("\n", ",");
-		String numbers[] = temp.split(",");
+		String delim = ",";
+		String temp;
+		if(text.contains("//")){
+			String newText = text.substring(2);
+			String line1[] = newText.split("\n", 2);
+			delim = line1[0];
+			System.out.println("DELIM: " + delim);
+			temp = line1[1];
+			String numbers[] = temp.split(delim);
+			return numbers;
+		}else{
+			temp = text.replaceAll("\n", ",");
+			String numbers[] = temp.split(delim);
 		
-		return numbers;		
+			return numbers;		
+		}
 	}
 	
 	private static String validate(String text){
