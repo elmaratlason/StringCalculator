@@ -9,13 +9,9 @@ private static int maxNum = 1000;
 		if(text.equals(""))
 			return 0;
 		else{
-			if(text.contains(",")){
-				return sum(getArray(text));
-			}else if(text.contains("\n")){
-				return sum(getArray(text));
-			}
+			return sum(getArray(text));
 		}
-		return 1;
+//		return 1;
 	}
 	
 	private static int toint(String number){

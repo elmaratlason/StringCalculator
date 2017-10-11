@@ -57,6 +57,10 @@ public class CalculatorTest {
 	public void testLargeNumber2(){
 		assertEquals(2, Calculator.add("0,2"));
 	}
-	
+	@Test
+	public void testVariantDelimiter(){
+		assertEquals(3, Calculator.add("//;\n1;2");
+	}
+		
 }
 	
