@@ -3,7 +3,7 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 private static int maxNum = 1000;
-private static boolean outputInfo = false;
+private static boolean outputInfo = true;
 	
 	public static int add(String text){
 		validate(text);

@@ -124,7 +124,7 @@ private static int testCounter = 0;
 	}
 	@Test(expected= IllegalArgumentException.class) 
 	public void testVariantDelimiterPeriod(){
-		assertEquals(10, Calculator.add("//.\n1.7.2"));
+		assertEquals(10, Calculator.add("//:\n1:7:-2"));
 		if(printseperator)
 			System.out.println(seperator + testCounter);
 		testCounter++;
