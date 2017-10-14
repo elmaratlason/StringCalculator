@@ -2,8 +2,9 @@ package is.ru.stringcalculator;
 
 
 public class Calculator {
-private static int maxNum = 1000;
-private static boolean outputInfo = true;
+
+	private static int maxNum = 1000;
+	private static boolean outputInfo = true;
 	
 	public static int add(String text){
 		validate(text);
@@ -56,7 +57,6 @@ private static boolean outputInfo = true;
 			//return mynumbers;		
 			
 	}
-	
 		
 	private static String validate(String text){
 		String [] numbers = getArray(text);
